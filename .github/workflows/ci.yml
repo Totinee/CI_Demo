@@ -1,6 +1,5 @@
 name: Android CI
 
-# Trigger the workflow on push or pull request to the main branch
 on:
   push:
     branches:
@@ -10,7 +9,7 @@ on:
       - main
 
 jobs:
-  build: # specifies the environment where the job will run 
+  build: #specifies where the job will run
     runs-on: ubuntu-latest
 
     steps:
@@ -18,11 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up JDK 11 for Android development
-      - name: Set up JDK 11
+      # Step 2: Set up JDK 17 for Android development
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'adopt'
 
       # Step 3: Set up Android SDK
